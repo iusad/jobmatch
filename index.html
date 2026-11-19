@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Work Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;800&family=Noto+Sans+Kannada:wght@400;600;800&family=Noto+Sans+Bengali:wght@400;600;800&family=Noto+Sans+Tamil:wght@400;600;800&family=Noto+Sans+Telugu:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f1b2d;--mut:#55627a;--bg:#f2f5fb;--pan:#fff;--line:#d3dbe9;--cob:#2347c5;--cobt:#e5ecff;--gold:#ffb703;--ok:#1e8e5a;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#eaf0fb;--mut:#9fb0cc;--bg:#0c1424;--pan:#141f35;--line:#2a3a58;--cob:#7f9cff;--cobt:#1b2a52;--ok:#4cc58a;color-scheme:dark}}
+:root[data-theme="dark"]{--ink:#eaf0fb;--mut:#9fb0cc;--bg:#0c1424;--pan:#141f35;--line:#2a3a58;--cob:#7f9cff;--cobt:#1b2a52;--ok:#4cc58a;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 "Mukta","Noto Sans Devanagari","Noto Sans Kannada","Noto Sans Bengali","Noto Sans Tamil","Noto Sans Telugu",system-ui,sans-serif}
+.wrap{max-width:1080px;margin:0 auto;padding:20px 16px 56px}
+header{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:flex-end;margin-bottom:20px}
+h1{font-size:clamp(30px,5vw,46px);line-height:1.1;margin:0 0 6px;font-weight:800;letter-spacing:-.01em}
+.sub{margin:0;color:var(--mut);max-width:52ch}
+.lang{display:flex;flex-wrap:wrap;gap:6px}
+.lang button{font:600 16px inherit;font-family:inherit;padding:8px 14px;border:2px solid var(--line);background:var(--pan);color:var(--ink);border-radius:999px;cursor:pointer}
+.lang button[aria-pressed=true]{background:var(--cob);border-color:var(--cob);color:#fff}
+.grid{display:grid;gap:24px;grid-template-columns:1fr}
+@media(min-width:900px){.grid{grid-template-columns:minmax(0,1fr) 340px;align-items:start}.side{position:sticky;top:16px}}
+section{background:var(--pan);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
+h2{font-size:21px;margin:0 0 4px;font-weight:800}
+.hint{color:var(--mut);font-size:15px;margin:0 0 14px}
+label{display:block;font-weight:600;font-size:15px;margin:12px 0 4px}
+input,textarea,select{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:10px;padding:10px 12px}
+textarea{min-height:110px;resize:vertical}
+input:focus,textarea:focus,select:focus,button:focus-visible{outline:3px solid var(--gold);outline-offset:1px}
+.two{display:grid;gap:0 14px;grid-template-columns:1fr}
+@media(min-width:600px){.two{grid-template-columns:1fr 1fr}}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:600 15px inherit;font-family:inherit;padding:8px 14px;border-radius:999px;border:2px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer;text-align:left}
+.chip[aria-pressed=true]{background:var(--cobt);border-color:var(--cob);color:var(--cob)}
+.chip.rm::after{content:" ×"}
+.item{border:1px dashed var(--line);border-radius:12px;padding:4px 14px 14px;margin-bottom:12px}
+.btn{font:700 16px inherit;font-family:inherit;border:0;border-radius:10px;padding:11px 18px;cursor:pointer;background:var(--cob);color:#fff}
+.btn.sec{background:transparent;color:var(--cob);border:2px solid var(--cob)}
+.btn.link{background:none;color:var(--mut);padding:6px 0;text-decoration:underline}
+.row{display:flex;gap:8px}
+.badge{background:var(--ink);color:var(--bg);border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.badge .top{background:var(--cob);color:#fff;padding:22px 18px 14px;position:relative}
+.badge .top::before{content:"";position:absolute;left:50%;top:8px;width:54px;height:8px;margin-left:-27px;border-radius:8px;background:rgba(255,255,255,.45)}
+.av{width:64px;height:64px;border-radius:50%;background:var(--gold);color:#0f1b2d;display:grid;place-items:center;font-size:26px;font-weight:800;margin-bottom:8px}
+.badge h3{margin:0;font-size:22px;line-height:1.2}
+.badge .lv{display:inline-block;margin-top:6px;background:rgba(255,255,255,.2);padding:2px 10px;border-radius:999px;font-size:14px;font-weight:600}
+.badge .bd{padding:14px 18px 18px;font-size:15px}
+.badge .bd p{margin:0 0 10px;overflow-wrap:anywhere}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 10px}
+.tags span{background:rgba(255,255,255,.14);border-radius:6px;padding:1px 8px;font-size:13.5px}
+.meter{height:8px;background:rgba(255,255,255,.2);border-radius:8px;overflow:hidden;margin:4px 0 4px}
+.meter i{display:block;height:100%;background:var(--gold);transition:width .3s}
+.note{font-size:13.5px;color:var(--mut);margin-top:10px}
+[hidden]{display:none!important}
+details{margin-top:10px}summary{cursor:pointer;font-weight:700;color:var(--cob)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ok);color:#fff;padding:10px 20px;border-radius:999px;font-weight:700;opacity:0;pointer-events:none;transition:opacity .25s}
+.toast.on{opacity:1}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div><h1 id="h1"></h1><p class="sub" id="sub"></p></div>
+<div class="lang" id="lang" role="group" aria-label="Language"></div>
+</header>
+<div class="chips" id="mode" style="margin-bottom:16px"></div><div id="acct"></div><div id="rec" hidden></div>
+<div class="grid" id="seeker">
+<form id="form" autocomplete="off" onsubmit="return false"></form>
+<aside class="side"><div class="badge" id="card"></div><p class="note" id="priv"></p><div id="offers"></div></aside>
+</div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+/* STEP 1: paste your Firebase web app config here (see SETUP.md) */
+var CFG={apiKey: "AIzaSyBpWGjnFF3gcyCWysdPYMEmR8auE2FaT9M",
+    authDomain: "profileforjob.firebaseapp.com",
+    projectId: "profileforjob",
+    storageBucket: "profileforjob.firebasestorage.app",
+    messagingSenderId: "438193579898",
+    appId: "1:438193579898:web:a4884c5b012c97000bd8c3"};
+var AUTH=null,busy=false;
+var T={
+h1:["Your work profile","आपकी कार्य प्रोफ़ाइल","तुमची कामाची प्रोफाइल"],
+sub:["Tell recruiters who you are and what you can do. A degree is not required. You can type in any language.","रिक्रूटर को बताइए कि आप कौन हैं और क्या कर सकते हैं। डिग्री ज़रूरी नहीं। आप किसी भी भाषा में लिख सकते हैं।","रिक्रूटरला सांगा तुम्ही कोण आहात आणि काय करू शकता. पदवी आवश्यक नाही. तुम्ही कोणत्याही भाषेत लिहू शकता."],
+sub2:["Degree or no degree, fresher or experienced: everyone can submit a profile to find better jobs and get matched quickly with recruiters’ needs. You can type in any language.","डिग्री हो या नहीं, फ्रेशर हों या अनुभवी: हर कोई बेहतर नौकरी के लिए प्रोफ़ाइल जमा कर सकता है और रिक्रूटर की ज़रूरत से जल्दी मैच पा सकता है। आप किसी भी भाषा में लिख सकते हैं।","पदवी असो वा नसो, फ्रेशर असो वा अनुभवी: प्रत्येकजण चांगल्या नोकरीसाठी प्रोफाइल सादर करू शकतो आणि रिक्रूटरच्या गरजेशी लवकर मॅच मिळवू शकतो. तुम्ही कोणत्याही भाषेत लिहू शकता."],
+s1:["About you","आपके बारे में","तुमच्याबद्दल"],
+name:["Full name","पूरा नाम","पूर्ण नाव"],
+phone:["Mobile number","मोबाइल नंबर","मोबाइल नंबर"],
+wa:["WhatsApp number","व्हाट्सऐप नंबर","व्हॉट्सॲप नंबर"],
+email:["Email","ईमेल","ईमेल"],
+city:["City or area","शहर या इलाका","शहर किंवा परिसर"],
+langs:["Languages you speak","आप कौन सी भाषाएँ बोलते हैं","तुम्ही कोणत्या भाषा बोलता"],
+s2:["Where are you in your career?","आप करियर में कहाँ हैं?","तुम्ही करिअरमध्ये कुठे आहात?"],
+l_fresher:["Fresher (no job yet)","फ्रेशर (अभी नौकरी नहीं की)","फ्रेशर (अजून नोकरी नाही)"],
+l_some:["Some experience","थोड़ा अनुभव","थोडा अनुभव"],
+l_senior:["Experienced / senior","अनुभवी / वरिष्ठ","अनुभवी / वरिष्ठ"],
+s3:["Education","शिक्षा","शिक्षण"],
+e_none:["No formal education","औपचारिक शिक्षा नहीं","औपचारिक शिक्षण नाही"],
+e_10:["Up to 10th","10वीं तक","10वी पर्यंत"],
+e_12:["12th","12वीं","12वी"],
+e_iti:["ITI / Diploma","ITI / डिप्लोमा","ITI / डिप्लोमा"],
+e_grad:["Graduate","स्नातक","पदवीधर"],
+e_pg:["Post-graduate","स्नातकोत्तर","पदव्युत्तर"],
+eduNote:["Course, college, year (optional)","कोर्स, कॉलेज, साल (वैकल्पिक)","कोर्स, कॉलेज, वर्ष (ऐच्छिक)"],
+h3:["Add your degree details. Recruiters search by degree, university and grades, so more detail means better matches.","अपनी डिग्री की जानकारी जोड़ें। रिक्रूटर डिग्री, यूनिवर्सिटी और ग्रेड से खोजते हैं, इसलिए ज़्यादा जानकारी से बेहतर मैच मिलता है।","तुमच्या पदवीची माहिती जोडा. रिक्रूटर पदवी, विद्यापीठ आणि गुणांवरून शोधतात, त्यामुळे जास्त माहिती म्हणजे चांगले मॅच."],
+deg:["Degree name (e.g. B.Com, B.E. Mechanical)","डिग्री का नाम (जैसे B.Com, B.E. मैकेनिकल)","पदवीचे नाव (उदा. B.Com, B.E. मेकॅनिकल)"],
+uni:["University / college","यूनिवर्सिटी / कॉलेज","विद्यापीठ / महाविद्यालय"],
+dyear:["Passing year","उत्तीर्ण होने का साल","उत्तीर्ण वर्ष"],
+grade:["Grade (CGPA or %)","ग्रेड (CGPA या %)","ग्रेड (CGPA किंवा %)"],
+courses:["Subjects or courses where you are strong","वे विषय या कोर्स जिनमें आप मज़बूत हैं","ज्या विषयांत किंवा कोर्समध्ये तुम्ही मजबूत आहात"],
+addDeg:["+ Add degree","+ डिग्री जोड़ें","+ पदवी जोडा"],
+s4:["What work are you open to?","आप किस तरह का काम करने को तैयार हैं?","तुम्ही कोणत्या प्रकारचे काम करायला तयार आहात?"],
+h4:["Pick all that fit. Choose “Any work” if you are ready to learn on the job.","जो ठीक लगे सब चुनें। अगर आप काम करते हुए सीखने को तैयार हैं तो “कोई भी काम” चुनें।","जे योग्य वाटेल ते निवडा. काम करता करता शिकायला तयार असाल तर “कोणतेही काम” निवडा."],
+w_desk:["Desk / office work","डेस्क / ऑफिस का काम","डेस्क / ऑफिसचे काम"],
+w_physical:["Physical work","शारीरिक मेहनत का काम","शारीरिक कष्टाचे काम"],
+w_trade:["Skilled trade (electrician, plumber, welder, driver)","हुनर का काम (इलेक्ट्रीशियन, प्लंबर, वेल्डर, ड्राइवर)","कौशल्याचे काम (इलेक्ट्रिशियन, प्लंबर, वेल्डर, ड्रायव्हर)"],
+w_gig:["Gig & delivery","गिग और डिलीवरी","गिग आणि डिलिव्हरी"],
+w_hosp:["Cafe, restaurant, hotel","कैफ़े, रेस्तरां, होटल","कॅफे, रेस्टॉरंट, हॉटेल"],
+w_factory:["Factory & machine operator","फ़ैक्टरी और मशीन ऑपरेटर","कारखाना आणि मशीन ऑपरेटर"],
+w_constr:["Construction & site work","निर्माण और साइट का काम","बांधकाम आणि साईटचे काम"],
+w_any:["Any work, I will learn on the job","कोई भी काम, मैं काम करते हुए सीखूँगा/सीखूँगी","कोणतेही काम, मी काम करता करता शिकेन"],
+s5:["Which industries interest you?","आपको कौन से उद्योग पसंद हैं?","तुम्हाला कोणते उद्योग आवडतात?"],
+h5:["Pick as many as you like.","जितने चाहें उतने चुनें।","हवे तितके निवडा."],
+i_it:["IT & software","आईटी और सॉफ़्टवेयर","आयटी आणि सॉफ्टवेअर"],
+i_health:["Healthcare","स्वास्थ्य सेवा","आरोग्य सेवा"],
+i_mfg:["Manufacturing","मैन्युफैक्चरिंग","उत्पादन (मॅन्युफॅक्चरिंग)"],
+i_constr:["Construction","निर्माण","बांधकाम"],
+i_food:["Hospitality & food","आतिथ्य और खान-पान","आतिथ्य आणि खाद्य"],
+i_retail:["Retail & shops","रिटेल और दुकानें","रिटेल आणि दुकाने"],
+i_logi:["Logistics & delivery","लॉजिस्टिक्स और डिलीवरी","लॉजिस्टिक्स आणि डिलिव्हरी"],
+i_edu:["Education","शिक्षा क्षेत्र","शिक्षण क्षेत्र"],
+i_fin:["Finance & banking","वित्त और बैंकिंग","वित्त आणि बँकिंग"],
+i_energy:["Mining & energy","खनन और ऊर्जा","खाणकाम आणि ऊर्जा"],
+i_agri:["Agriculture","कृषि","शेती"],
+i_eng:["Engineering","इंजीनियरिंग","अभियांत्रिकी"],
+indOther:["Other industry (type it)","कोई और उद्योग (लिखें)","इतर उद्योग (लिहा)"],
+s6:["Skills","कौशल","कौशल्ये"],
+h6:["Small skills count: cooking, billing, Tally, welding, talking to customers, driving. Type one and press Enter.","छोटे हुनर भी मायने रखते हैं: खाना बनाना, बिलिंग, Tally, वेल्डिंग, ग्राहकों से बात, ड्राइविंग। एक लिखें और Enter दबाएँ।","छोटी कौशल्येही महत्त्वाची: स्वयंपाक, बिलिंग, Tally, वेल्डिंग, ग्राहकांशी बोलणे, ड्रायव्हिंग. एक लिहा आणि Enter दाबा."],
+skillPh:["Add a skill","कौशल जोड़ें","कौशल्य जोडा"],
+add:["Add","जोड़ें","जोडा"],
+s7:["Work experience","काम का अनुभव","कामाचा अनुभव"],
+h7:["Waiter, operator, driver, manager: all count. Say what you did day to day.","वेटर, ऑपरेटर, ड्राइवर, मैनेजर: सब गिना जाता है। रोज़ क्या करते थे, बताइए।","वेटर, ऑपरेटर, ड्रायव्हर, मॅनेजर: सर्व महत्त्वाचे. रोज काय करत होतात ते सांगा."],
+role:["Job title","पद","पदाचे नाव"],
+org:["Company or place","कंपनी या जगह","कंपनी किंवा ठिकाण"],
+yrs:["How long (e.g. 2 years)","कितने समय (जैसे 2 साल)","किती काळ (उदा. 2 वर्षे)"],
+desc:["What you did","आपने क्या काम किया","तुम्ही काय काम केले"],
+addExp:["+ Add experience","+ अनुभव जोड़ें","+ अनुभव जोडा"],
+remove:["Remove","हटाएँ","काढा"],
+s8:["Industry knowledge","उद्योग का ज्ञान","उद्योगाचे ज्ञान"],
+h8:["Your job title may be “operations”, but what do you know about the industry? Machines, processes, rules, suppliers, customers, pricing, safety. Recruiters use this to match you to better roles and higher pay. Skip it if it does not apply.","आपका पद “ऑपरेशंस” हो सकता है, पर उद्योग के बारे में आप क्या जानते हैं? मशीनें, प्रक्रिया, नियम, सप्लायर, ग्राहक, कीमतें, सुरक्षा। रिक्रूटर इससे आपको बेहतर काम और ज़्यादा वेतन के लिए चुनते हैं। लागू न हो तो छोड़ दें।","तुमचे पद “ऑपरेशन्स” असेल, पण उद्योगाबद्दल तुम्हाला काय माहीत आहे? मशीन, प्रक्रिया, नियम, पुरवठादार, ग्राहक, किंमती, सुरक्षा. रिक्रूटर यावरून तुम्हाला चांगले काम आणि जास्त पगारासाठी निवडतात. लागू नसेल तर सोडा."],
+s9:["Projects & links","प्रोजेक्ट और लिंक","प्रोजेक्ट आणि लिंक"],
+h9:["Projects, portfolio, GitHub, LinkedIn, YouTube, or photos of your work.","प्रोजेक्ट, पोर्टफ़ोलियो, GitHub, LinkedIn, YouTube या अपने काम की फ़ोटो।","प्रोजेक्ट, पोर्टफोलिओ, GitHub, LinkedIn, YouTube किंवा कामाचे फोटो."],
+ptitle:["Project or link name","प्रोजेक्ट या लिंक का नाम","प्रोजेक्ट किंवा लिंकचे नाव"],
+url:["Link","लिंक","लिंक"],
+addLink:["+ Add project or link","+ प्रोजेक्ट या लिंक जोड़ें","+ प्रोजेक्ट किंवा लिंक जोडा"],
+s10:["Pay and availability","वेतन और उपलब्धता","पगार आणि उपलब्धता"],
+pay:["Expected pay (per month or per day)","अपेक्षित वेतन (महीना या दिन)","अपेक्षित पगार (महिना किंवा दिवस)"],
+av:["When can you start?","कब से शुरू कर सकते हैं?","केव्हापासून सुरू करू शकता?"],
+av0:["Immediately","तुरंत","लगेच"],av1:["Within 15 days","15 दिन में","15 दिवसांत"],av2:["Within a month","एक महीने में","एका महिन्यात"],
+reloc:["I can move to another city","मैं दूसरे शहर जा सकता/सकती हूँ","मी दुसऱ्या शहरात जाऊ शकतो/शकते"],
+save:["Save profile","प्रोफ़ाइल सेव करें","प्रोफाइल सेव्ह करा"],
+saved:["Profile saved","प्रोफ़ाइल सेव हुई","प्रोफाइल सेव्ह झाली"],
+strength:["Profile strength","प्रोफ़ाइल की मज़बूती","प्रोफाइलची ताकद"],
+empty:["Your name","आपका नाम","तुमचे नाव"],
+priv:["Preview of what recruiters see. In this version your profile is saved only in this browser.","रिक्रूटर को यह दिखेगा। इस संस्करण में प्रोफ़ाइल सिर्फ़ इसी ब्राउज़र में सेव होती है।","रिक्रूटरला हे दिसेल. या आवृत्तीत प्रोफाइल फक्त याच ब्राउझरमध्ये सेव्ह होते."]
+};
+var LK=["en","hi","mr","kn","bn","as","ta","te"],LN=["English","हिन्दी","मराठी","ಕನ್ನಡ","বাংলা","অসমীয়া","தமிழ்","తెలుగు"],li=0;
+var X={
+kn:{h1:"ನಿಮ್ಮ ಕೆಲಸದ ಪ್ರೊಫೈಲ್",sub:"ನೀವು ಯಾರು, ಏನು ಮಾಡಬಲ್ಲಿರಿ ಎಂದು ರಿಕ್ರೂಟರ್‌ಗೆ ತಿಳಿಸಿ. ಪದವಿ ಬೇಕಿಲ್ಲ. ಯಾವ ಭಾಷೆಯಲ್ಲಾದರೂ ಬರೆಯಬಹುದು.",s1:"ನಿಮ್ಮ ಬಗ್ಗೆ",s2:"ನಿಮ್ಮ ವೃತ್ತಿಜೀವನದಲ್ಲಿ ನೀವು ಎಲ್ಲಿದ್ದೀರಿ?",s3:"ಶಿಕ್ಷಣ",s4:"ಯಾವ ರೀತಿಯ ಕೆಲಸಕ್ಕೆ ನೀವು ಸಿದ್ಧ?",s5:"ಯಾವ ಉದ್ಯಮಗಳಲ್ಲಿ ಆಸಕ್ತಿ ಇದೆ?",s6:"ಕೌಶಲ್ಯಗಳು",s7:"ಕೆಲಸದ ಅನುಭವ",s8:"ಉದ್ಯಮದ ಜ್ಞಾನ",s9:"ಪ್ರಾಜೆಕ್ಟ್‌ಗಳು ಮತ್ತು ಲಿಂಕ್‌ಗಳು",s10:"ವೇತನ ಮತ್ತು ಲಭ್ಯತೆ",name:"ಪೂರ್ಣ ಹೆಸರು",phone:"ಮೊಬೈಲ್ ಸಂಖ್ಯೆ",email:"ಇಮೇಲ್",city:"ನಗರ ಅಥವಾ ಪ್ರದೇಶ",l_fresher:"ಫ್ರೆಶರ್ (ಇನ್ನೂ ಕೆಲಸ ಮಾಡಿಲ್ಲ)",l_some:"ಸ್ವಲ್ಪ ಅನುಭವ",l_senior:"ಅನುಭವಿ / ಹಿರಿಯ",w_desk:"ಡೆಸ್ಕ್ / ಆಫೀಸ್ ಕೆಲಸ",w_physical:"ದೈಹಿಕ ಶ್ರಮದ ಕೆಲಸ",w_gig:"ಗಿಗ್ ಮತ್ತು ಡೆಲಿವರಿ",w_hosp:"ಕೆಫೆ, ರೆಸ್ಟೋರೆಂಟ್, ಹೋಟೆಲ್",w_factory:"ಕಾರ್ಖಾನೆ ಮತ್ತು ಯಂತ್ರ ಆಪರೇಟರ್",w_constr:"ನಿರ್ಮಾಣ ಮತ್ತು ಸೈಟ್ ಕೆಲಸ",w_any:"ಯಾವುದೇ ಕೆಲಸ, ಕೆಲಸ ಮಾಡುತ್ತಾ ಕಲಿಯುತ್ತೇನೆ",save:"ಪ್ರೊಫೈಲ್ ಉಳಿಸಿ",saved:"ಪ್ರೊಫೈಲ್ ಉಳಿಸಲಾಗಿದೆ",add:"ಸೇರಿಸಿ",remove:"ತೆಗೆಯಿರಿ",strength:"ಪ್ರೊಫೈಲ್ ಬಲ",empty:"ನಿಮ್ಮ ಹೆಸರು"},
+bn:{h1:"আপনার কাজের প্রোফাইল",sub:"আপনি কে এবং কী করতে পারেন তা রিক্রুটারকে জানান। ডিগ্রি লাগবে না। যেকোনো ভাষায় লিখতে পারেন।",s1:"আপনার সম্পর্কে",s2:"আপনার কর্মজীবনে আপনি কোথায়?",s3:"শিক্ষা",s4:"কী ধরনের কাজ করতে রাজি?",s5:"কোন শিল্পক্ষেত্রে আগ্রহ?",s6:"দক্ষতা",s7:"কাজের অভিজ্ঞতা",s8:"শিল্পক্ষেত্রের জ্ঞান",s9:"প্রজেক্ট ও লিংক",s10:"বেতন ও কবে থেকে পারবেন",name:"পুরো নাম",phone:"মোবাইল নম্বর",email:"ইমেল",city:"শহর বা এলাকা",l_fresher:"ফ্রেশার (এখনও চাকরি করিনি)",l_some:"কিছুটা অভিজ্ঞতা",l_senior:"অভিজ্ঞ / সিনিয়র",w_desk:"ডেস্ক / অফিসের কাজ",w_physical:"শারীরিক পরিশ্রমের কাজ",w_gig:"গিগ ও ডেলিভারি",w_hosp:"ক্যাফে, রেস্তোরাঁ, হোটেল",w_factory:"কারখানা ও মেশিন অপারেটর",w_constr:"নির্মাণ ও সাইটের কাজ",w_any:"যেকোনো কাজ, কাজ করতে করতে শিখব",save:"প্রোফাইল সেভ করুন",saved:"প্রোফাইল সেভ হয়েছে",add:"যোগ করুন",remove:"মুছুন",strength:"প্রোফাইলের শক্তি",empty:"আপনার নাম"},
+as:{h1:"আপোনাৰ কামৰ প্ৰফাইল",sub:"আপুনি কোন আৰু কি কৰিব পাৰে সেয়া ৰিক্ৰুটাৰক জনাওক। ডিগ্ৰী লাগিব নালাগে। যিকোনো ভাষাত লিখিব পাৰে।",s1:"আপোনাৰ বিষয়ে",s2:"আপুনি কৰ্মজীৱনত কোন অৱস্থাত আছে?",s3:"শিক্ষা",s4:"কেনেধৰণৰ কাম কৰিবলৈ সাজু?",s5:"কোনবোৰ উদ্যোগত আগ্ৰহ আছে?",s6:"দক্ষতা",s7:"কামৰ অভিজ্ঞতা",s8:"উদ্যোগৰ জ্ঞান",s9:"প্ৰজেক্ট আৰু লিংক",s10:"দৰমহা আৰু উপলব্ধতা",name:"সম্পূৰ্ণ নাম",phone:"মোবাইল নম্বৰ",email:"ইমেইল",city:"নগৰ বা অঞ্চল",l_fresher:"ফ্ৰেশাৰ (এতিয়ালৈকে চাকৰি কৰা নাই)",l_some:"অলপ অভিজ্ঞতা",l_senior:"অভিজ্ঞ / জ্যেষ্ঠ",w_desk:"ডেস্ক / অফিচৰ কাম",w_physical:"শাৰীৰিক পৰিশ্ৰমৰ কাম",w_gig:"গিগ আৰু ডেলিভাৰী",w_hosp:"কেফে, ৰেস্তোৰাঁ, হোটেল",w_factory:"কাৰখানা আৰু মেচিন অপাৰেটৰ",w_constr:"নিৰ্মাণ আৰু চাইটৰ কাম",w_any:"যিকোনো কাম, কাম কৰি কৰি শিকিম",save:"প্ৰফাইল ছেভ কৰক",saved:"প্ৰফাইল ছেভ হ’ল",add:"যোগ কৰক",remove:"আঁতৰাওক",strength:"প্ৰফাইলৰ শক্তি",empty:"আপোনাৰ নাম"},
+ta:{h1:"உங்கள் வேலை சுயவிவரம்",sub:"நீங்கள் யார், என்ன செய்ய முடியும் என்பதை ரிக்ரூட்டருக்குத் தெரிவியுங்கள். பட்டம் தேவையில்லை. எந்த மொழியிலும் எழுதலாம்.",s1:"உங்களைப் பற்றி",s2:"உங்கள் தொழில் வாழ்க்கையில் எங்கே இருக்கிறீர்கள்?",s3:"கல்வி",s4:"எந்த வகை வேலைக்குத் தயாராக இருக்கிறீர்கள்?",s5:"எந்தத் துறைகளில் ஆர்வம்?",s6:"திறன்கள்",s7:"வேலை அனுபவம்",s8:"துறை சார்ந்த அறிவு",s9:"திட்டங்களும் இணைப்புகளும்",s10:"சம்பளமும் எப்போது சேரலாம் என்பதும்",name:"முழு பெயர்",phone:"கைபேசி எண்",email:"மின்னஞ்சல்",city:"நகரம் அல்லது பகுதி",l_fresher:"புதியவர் (இன்னும் வேலை செய்யவில்லை)",l_some:"சிறிது அனுபவம்",l_senior:"அனுபவசாலி / மூத்தவர்",w_desk:"மேசை / அலுவலக வேலை",w_physical:"உடல் உழைப்பு வேலை",w_gig:"கிக் மற்றும் டெலிவரி",w_hosp:"கஃபே, உணவகம், ஹோட்டல்",w_factory:"தொழிற்சாலை மற்றும் இயந்திர இயக்குநர்",w_constr:"கட்டுமானம் மற்றும் தளப் பணி",w_any:"எந்த வேலையும், வேலை செய்துகொண்டே கற்றுக்கொள்வேன்",save:"சுயவிவரத்தைச் சேமி",saved:"சுயவிவரம் சேமிக்கப்பட்டது",add:"சேர்",remove:"நீக்கு",strength:"சுயவிவர வலிமை",empty:"உங்கள் பெயர்"},
+te:{h1:"మీ పని ప్రొఫైల్",sub:"మీరు ఎవరో, ఏమి చేయగలరో రిక్రూటర్‌కు తెలియజేయండి. డిగ్రీ అవసరం లేదు. ఏ భాషలోనైనా రాయవచ్చు.",s1:"మీ గురించి",s2:"మీ కెరీర్‌లో మీరు ఎక్కడ ఉన్నారు?",s3:"విద్య",s4:"ఏ రకమైన పనికి సిద్ధంగా ఉన్నారు?",s5:"ఏ పరిశ్రమలపై ఆసక్తి ఉంది?",s6:"నైపుణ్యాలు",s7:"పని అనుభవం",s8:"పరిశ్రమ పరిజ్ఞానం",s9:"ప్రాజెక్టులు మరియు లింకులు",s10:"జీతం మరియు ఎప్పుడు చేరగలరు",name:"పూర్తి పేరు",phone:"మొబైల్ నంబర్",email:"ఈమెయిల్",city:"నగరం లేదా ప్రాంతం",l_fresher:"ఫ్రెషర్ (ఇంకా ఉద్యోగం చేయలేదు)",l_some:"కొంచెం అనుభవం",l_senior:"అనుభవజ్ఞుడు / సీనియర్",w_desk:"డెస్క్ / ఆఫీసు పని",w_physical:"శారీరక శ్రమ పని",w_gig:"గిగ్ మరియు డెలివరీ",w_hosp:"కేఫ్, రెస్టారెంట్, హోటల్",w_factory:"ఫ్యాక్టరీ మరియు మెషిన్ ఆపరేటర్",w_constr:"నిర్మాణం మరియు సైట్ పని",w_any:"ఏ పనైనా, పని చేస్తూ నేర్చుకుంటాను",save:"ప్రొఫైల్ సేవ్ చేయండి",saved:"ప్రొఫైల్ సేవ్ అయింది",add:"జోడించండి",remove:"తొలగించండి",strength:"ప్రొఫైల్ బలం",empty:"మీ పేరు"}
+};
+var WK=["desk","physical","trade","gig","hosp","factory","constr","any"],
+IK=["it","health","mfg","constr","food","retail","logi","edu","fin","energy","agri","eng"],
+EK=["none","10","12","iti","grad","pg"],LV=["fresher","some","senior"];
+var S={name:"",phone:"",wa:"",email:"",city:"",langs:"",level:"",edu:"",eduNote:"",work:[],ind:[],indCustom:"",skills:[],exp:[],degrees:[],know:"",links:[],pay:"",avail:"0",reloc:false};
+var KEY="jp_profile_v1";
+try{var d=JSON.parse(localStorage.getItem(KEY)||"null");if(d){for(var k in S)if(d.p&&k in d.p)S[k]=d.p[k];li=d.l||0}}catch(e){}
+X.kn.sub2="ಪದವಿ ಇರಲಿ ಇಲ್ಲದಿರಲಿ, ಫ್ರೆಶರ್ ಆಗಿರಲಿ ಅನುಭವಿಯಾಗಿರಲಿ: ಎಲ್ಲರೂ ಉತ್ತಮ ಕೆಲಸಕ್ಕಾಗಿ ಪ್ರೊಫೈಲ್ ಸಲ್ಲಿಸಬಹುದು ಮತ್ತು ರಿಕ್ರೂಟರ್‌ಗಳ ಅಗತ್ಯಕ್ಕೆ ಬೇಗ ಹೊಂದಾಣಿಕೆ ಪಡೆಯಬಹುದು. ಯಾವ ಭಾಷೆಯಲ್ಲಾದರೂ ಬರೆಯಬಹುದು.";
+X.bn.sub2="ডিগ্রি থাকুক বা না থাকুক, ফ্রেশার হোন বা অভিজ্ঞ: সবাই ভালো কাজের জন্য প্রোফাইল জমা দিতে পারেন এবং রিক্রুটারের চাহিদার সঙ্গে দ্রুত মিল পেতে পারেন। যেকোনো ভাষায় লিখতে পারেন।";
+X.as.sub2="ডিগ্ৰী থাকক বা নাথাকক, ফ্ৰেশাৰ হওক বা অভিজ্ঞ: সকলোৱে ভাল কামৰ বাবে প্ৰফাইল জমা দিব পাৰে আৰু ৰিক্ৰুটাৰৰ প্ৰয়োজনৰ সৈতে সোনকালে মিল পাব পাৰে। যিকোনো ভাষাত লিখিব পাৰে।";
+X.ta.sub2="பட்டம் இருந்தாலும் இல்லாவிட்டாலும், புதியவரானாலும் அனுபவசாலியானாலும்: அனைவரும் சிறந்த வேலைக்காகச் சுயவிவரத்தைச் சமர்ப்பிக்கலாம்; ரிக்ரூட்டர்களின் தேவையுடன் விரைவாகப் பொருந்தலாம். எந்த மொழியிலும் எழுதலாம்.";
+X.te.sub2="డిగ్రీ ఉన్నా లేకపోయినా, ఫ్రెషర్ అయినా అనుభవజ్ఞులైనా: ప్రతి ఒక్కరూ మంచి ఉద్యోగాల కోసం ప్రొఫైల్ సమర్పించవచ్చు, రిక్రూటర్ అవసరాలకు త్వరగా మ్యాచ్ కావచ్చు. ఏ భాషలోనైనా రాయవచ్చు.";
+function t(k){var x=X[LK[li]];return (x&&x[k])||T[k][li]||T[k][0]}
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function $(i){return document.getElementById(i)}
+function chip(g,k,on,txt){return '<button type="button" class="chip" data-chip="'+g+':'+k+'" aria-pressed="'+on+'">'+esc(txt)+'</button>'}
+function fld(f,lab,ph,type){return '<label>'+esc(t(lab))+'</label><input data-f="'+f+'" type="'+(type||"text")+'" value="'+esc(S[f])+'"'+(ph?' placeholder="'+esc(ph)+'"':'')+'>'}
+function sec(n,body,h){return '<section><h2>'+t("s"+n)+'</h2>'+(h?'<p class="hint">'+t(h)+'</p>':'')+body+'</section>'}
+function form(){
+var h='';
+h+=sec(1,'<div class="two"><div>'+fld("name","name")+'</div><div>'+fld("city","city")+'</div><div>'+fld("phone","phone","","tel")+'</div><div>'+fld("wa","wa","","tel")+'</div><div>'+fld("email","email","","email")+'</div><div>'+fld("langs","langs")+'</div></div>');
+h+=sec(2,'<div class="chips">'+LV.map(function(k){return chip("level",k,S.level==k,t("l_"+k))}).join('')+'</div>');
+h+=sec(3,'<div class="chips">'+EK.map(function(k){return chip("edu",k,S.edu==k,t("e_"+k))}).join('')+'</div>'+fld("eduNote","eduNote")+(['iti','grad','pg'].indexOf(S.edu)>-1?'<p class="hint" style="margin-top:16px">'+t("h3")+'</p>'+S.degrees.map(function(x,i){return '<div class="item"><label>'+t("deg")+'</label><input data-l="degrees:'+i+':deg" value="'+esc(x.deg)+'"><div class="two"><div><label>'+t("uni")+'</label><input data-l="degrees:'+i+':uni" value="'+esc(x.uni)+'"></div><div><label>'+t("dyear")+'</label><input data-l="degrees:'+i+':year" value="'+esc(x.year)+'"></div></div><label>'+t("grade")+'</label><input data-l="degrees:'+i+':grade" value="'+esc(x.grade)+'"><label>'+t("courses")+'</label><textarea data-l="degrees:'+i+':courses" style="min-height:70px">'+esc(x.courses)+'</textarea><button type="button" class="btn link" data-rm="degrees:'+i+'">'+t("remove")+'</button></div>'}).join('')+'<button type="button" class="btn sec" data-add="degrees">'+t("addDeg")+'</button>':''));
+h+=sec(4,'<div class="chips">'+WK.map(function(k){return chip("work",k,S.work.indexOf(k)>-1,t("w_"+k))}).join('')+'</div>',"h4");
+h+=sec(5,'<div class="chips">'+IK.map(function(k){return chip("ind",k,S.ind.indexOf(k)>-1,t("i_"+k))}).join('')+'</div>'+fld("indCustom","indOther"),"h5");
+h+=sec(6,'<div class="chips" style="margin-bottom:12px">'+S.skills.map(function(s,i){return '<button type="button" class="chip rm" data-rm="skills:'+i+'">'+esc(s)+'</button>'}).join('')+'</div><div class="row"><input id="skin" placeholder="'+esc(t("skillPh"))+'"><button type="button" class="btn sec" data-add="skills">'+t("add")+'</button></div>',"h6");
+h+=sec(7,S.exp.map(function(x,i){return '<div class="item"><div class="two"><div><label>'+t("role")+'</label><input data-l="exp:'+i+':role" value="'+esc(x.role)+'"></div><div><label>'+t("org")+'</label><input data-l="exp:'+i+':org" value="'+esc(x.org)+'"></div></div><label>'+t("yrs")+'</label><input data-l="exp:'+i+':yrs" value="'+esc(x.yrs)+'"><label>'+t("desc")+'</label><textarea data-l="exp:'+i+':desc" style="min-height:80px">'+esc(x.desc)+'</textarea><button type="button" class="btn link" data-rm="exp:'+i+'">'+t("remove")+'</button></div>'}).join('')+'<button type="button" class="btn sec" data-add="exp">'+t("addExp")+'</button>',"h7");
+h+=sec(8,'<textarea data-f="know">'+esc(S.know)+'</textarea>',"h8");
+h+=sec(9,S.links.map(function(x,i){return '<div class="item"><div class="two"><div><label>'+t("ptitle")+'</label><input data-l="links:'+i+':title" value="'+esc(x.title)+'"></div><div><label>'+t("url")+'</label><input data-l="links:'+i+':url" type="url" value="'+esc(x.url)+'"></div></div><button type="button" class="btn link" data-rm="links:'+i+'">'+t("remove")+'</button></div>'}).join('')+'<button type="button" class="btn sec" data-add="links">'+t("addLink")+'</button>',"h9");
+h+=sec(10,'<div class="two"><div>'+fld("pay","pay")+'</div><div><label>'+t("av")+'</label><select data-f="avail">'+[0,1,2].map(function(i){return '<option value="'+i+'"'+(S.avail==i?' selected':'')+'>'+t("av"+i)+'</option>'}).join('')+'</select></div></div><label style="display:flex;gap:10px;align-items:center;font-weight:400;font-size:17px"><input type="checkbox" data-f="reloc" style="width:22px;height:22px"'+(S.reloc?' checked':'')+'>'+t("reloc")+'</label>');
+h+='<button type="button" class="btn" data-save="1">'+t("save")+'</button>';
+$("form").innerHTML=h;
+}
+function tags(a){return a.length?'<div class="tags">'+a.map(function(x){return '<span>'+esc(x)+'</span>'}).join('')+'</div>':''}
+function card(){
+var n=S.name.trim(),ini=n?n.charAt(0).toUpperCase():"?";
+var e=S.exp.filter(function(x){return x.role||x.org});
+var inds=S.ind.map(function(k){return t("i_"+k)}).concat(S.indCustom?[S.indCustom]:[]);
+var checks=[n,S.phone||S.email,S.level,S.edu,S.work.length,inds.length,S.skills.length,e.length||S.level=="fresher",S.know.trim(),S.links.length];
+var pct=Math.round(checks.filter(Boolean).length/checks.length*100);
+$("card").innerHTML='<div class="top"><div class="av">'+esc(ini)+'</div><h3>'+esc(n||t("empty"))+'</h3>'+(S.level?'<span class="lv">'+t("l_"+S.level)+'</span>':'')+'</div><div class="bd">'
++(S.city?'<p>'+esc(S.city)+'</p>':'')
++(S.phone||S.email?'<p>'+esc([S.phone,S.email].filter(Boolean).join("  |  "))+'</p>':'')
++tags(S.work.map(function(k){return t("w_"+k)}))+tags(inds)+tags(S.skills)
++(S.degrees[0]&&S.degrees[0].deg?'<p><b>'+esc(S.degrees[0].deg)+'</b> '+esc(S.degrees[0].uni)+(S.degrees[0].grade?' | '+esc(S.degrees[0].grade):'')+'</p>':'')
++(e[0]?'<p><b>'+esc(e[0].role)+'</b> '+esc(e[0].org)+'</p>':'')
++'<div>'+t("strength")+': '+pct+'%</div><div class="meter"><i style="width:'+pct+'%"></i></div></div>';
+}
+function ui(){
+document.documentElement.lang=LK[li];
+$("h1").textContent=t("h1");$("sub").textContent=t("sub2");$("priv").textContent=t("priv");
+$("lang").innerHTML=LN.map(function(n,i){return '<button type="button" data-lang="'+i+'" aria-pressed="'+(i==li)+'">'+n+'</button>'}).join('');
+form();card();
+}
+function persist(){try{localStorage.setItem(KEY,JSON.stringify({p:S,l:li}))}catch(e){}}
+function toast(m){var x=$("toast");x.textContent=m;x.classList.add("on");setTimeout(function(){x.classList.remove("on")},1800)}
+function addSkill(){var i=$("skin"),v=i.value.trim();if(v&&S.skills.indexOf(v)<0){S.skills.push(v);persist();form();card();$("skin").focus()}}
+document.addEventListener("click",function(e){
+var b=e.target.closest("button");if(!b)return;
+if(b.dataset.lang){li=+b.dataset.lang;persist();ui();return}
+if(b.dataset.chip){var p=b.dataset.chip.split(":"),g=p[0],k=p[1];
+if(g=="level"||g=="edu")S[g]=S[g]==k?"":k;else{var a=S[g],i=a.indexOf(k);i>-1?a.splice(i,1):a.push(k)}
+persist();form();card();return}
+if(b.dataset.rm){var q=b.dataset.rm.split(":");S[q[0]].splice(+q[1],1);persist();form();card();return}
+if(b.dataset.add=="skills"){addSkill();return}
+if(b.dataset.add=="exp"){S.exp.push({role:"",org:"",yrs:"",desc:""});persist();form();return}
+if(b.dataset.add=="degrees"){S.degrees.push({deg:"",uni:"",year:"",grade:"",courses:""});persist();form();return}
+if(b.dataset.add=="links"){S.links.push({title:"",url:""});persist();form();return}
+if(b.dataset.save){persist();cloudSave()}
+});
+document.addEventListener("keydown",function(e){if(e.key=="Enter"&&e.target.id=="skin"){e.preventDefault();addSkill()}});
+function onEdit(e){var el=e.target;
+if(el.dataset.f){S[el.dataset.f]=el.type=="checkbox"?el.checked:el.value}
+else if(el.dataset.l){var q=el.dataset.l.split(":");S[q[0]][+q[1]][q[2]]=el.value}
+else return;
+persist();card()}
+document.addEventListener("input",onEdit);document.addEventListener("change",onEdit);
+function A(o){for(var k in o)T[k]=[o[k]]}
+function q(k){return t("x_"+k)}
+A({x_mS:"I am a job seeker",x_mR:"I am a recruiter",x_user:"Username",x_pw:"Password",x_in:"Sign in",x_new:"Create account",x_out:"Log out",x_co:"Company name",x_ct:"Your contact phone or email",
+x_hint:"Create a username (letters, numbers, _ or -, 3 to 20 characters) and a password of 6 or more characters.",
+x_as:"Signed in as",x_offT:"Job offers for you",x_noO:"No offers yet. Recruiters will write here when your profile matches.",
+x_find:"Find candidates",x_kw:"Job title or skills",x_kwp:"e.g. welder, billing, Tally, barista",x_my:"Minimum years of experience",
+x_any:"Any",x_ng:"Non-graduate",x_gr:"Graduate or above",x_edu:"Education",x_lv:"Seniority",x_wk:"Work type",x_ind:"Industry",x_go:"Search",
+x_n:"profiles found",x_none:"No profiles match. Try fewer filters.",x_so:"Send offer",x_ot:"Offer title (job name)",x_om:"Message",x_sent:"Offer sent",
+x_bad:"Wrong username or password",x_tk:"That username is taken",x_need:"Saved in this browser. Create an account to save online.",
+x_nodb:"Online saving is not available here. Your profile stays in this browser.",x_ok:"Profile saved online",x_from:"from"});
+var DB=null,me=null,unOff=null,OFF=[],RES=[];
+var mode=me&&me.role=="r"?"rec":"seeker";
+function blank(){return{name:"",phone:"",wa:"",email:"",city:"",langs:"",level:"",edu:"",eduNote:"",work:[],ind:[],indCustom:"",skills:[],exp:[],degrees:[],know:"",links:[],pay:"",avail:"0",reloc:false}}
+function hx(p,s){return crypto.subtle.digest("SHA-256",new TextEncoder().encode(s+":"+p)).then(function(b){return Array.from(new Uint8Array(b)).map(function(x){return("0"+x.toString(16)).slice(-2)}).join("")})}
+function setMe(m){me=m;try{m?localStorage.setItem("jp_me",JSON.stringify(m)):localStorage.removeItem("jp_me")}catch(e){}}
+function err(e){toast(String(e&&e.message||e))}
+async function loadMine(u){var d=await DB.doc("profiles/"+u).get();if(d.exists){var x=d.data();S=Object.assign(blank(),x.p);li=x.l||0;persist();ui()}}
+async function authGo(isNew){
+if(!DB){toast(q("nodb"));return}
+var u=$("au").value.trim().toLowerCase(),p=$("ap").value,em=u+"@jobprofile.app";
+if(!/^[a-z0-9_-]{3,20}$/.test(u)||p.length<6){toast(q("hint"));return}
+busy=true;
+try{var m;
+if(isNew){await AUTH.createUserWithEmailAndPassword(em,p);
+if(mode=="rec"){m={role:"r",u:u,company:$("rco").value.trim(),contact:$("rct").value.trim()};await DB.doc("recruiters/"+u).set({u:u,company:m.company,contact:m.contact})}
+else{m={role:"s",u:u};await DB.doc("profiles/"+u).set({u:u,p:S,l:li,ts:Date.now()})}}
+else{await AUTH.signInWithEmailAndPassword(em,p);var r=await DB.doc("recruiters/"+u).get();
+if(r.exists){m={role:"r",u:u,company:r.data().company,contact:r.data().contact};mode="rec"}else{m={role:"s",u:u};mode="seeker";await loadMine(u)}}
+setMe(m);busy=false;shell()}
+catch(e){busy=false;var c=String(e.code||"");toast(c.indexOf("in-use")>-1?q("tk"):/password|credential|user-not-found/.test(c)?q("bad"):String(e.message||e))}}
+function cloudSave(){
+if(me&&me.role=="s"&&DB)DB.doc("profiles/"+me.u).set({u:me.u,p:S,l:li,ts:Date.now()}).then(function(){toast(q("ok"))},err);
+else toast(DB?q("need"):q("nodb"))}
+function chipM(m,k){return'<button type="button" class="chip" data-mode="'+m+'" aria-pressed="'+(mode==m)+'">'+q(k)+'</button>'}
+function shell(){
+var role=mode=="rec"?"r":"s",ok=me&&me.role==role;
+$("mode").innerHTML=chipM("seeker","mS")+chipM("rec","mR");
+$("acct").innerHTML=ok?'<section><b>'+q("as")+' '+esc(me.u)+'</b> <button type="button" class="btn link" data-out="1">'+q("out")+'</button></section>':
+'<section><p class="hint">'+q("hint")+'</p><div class="two"><div><label>'+q("user")+'</label><input id="au" autocapitalize="none"></div><div><label>'+q("pw")+'</label><input id="ap" type="password"></div>'+(role=="r"?'<div><label>'+q("co")+'</label><input id="rco"></div><div><label>'+q("ct")+'</label><input id="rct"></div>':'')+'</div><div class="row" style="margin-top:14px"><button type="button" class="btn" data-auth="in">'+q("in")+'</button><button type="button" class="btn sec" data-auth="new">'+q("new")+'</button></div></section>';
+$("seeker").hidden=mode!="seeker";$("rec").hidden=!(mode=="rec"&&ok);
+if(mode=="rec"&&ok&&!$("rec").dataset.b){$("rec").dataset.b=1;recUI()}
+if(me&&me.role=="s"&&DB&&!unOff){unOff=DB.collection("offers").where("to","==",me.u).onSnapshot(function(s){OFF=s.docs.map(function(d){return d.data()}).sort(function(a,b){return b.ts-a.ts});offers()},err)}
+offers()}
+function offers(){var e=$("offers");
+if(!(me&&me.role=="s")){e.innerHTML="";return}
+e.innerHTML='<section style="margin-top:16px"><h2>'+q("offT")+'</h2>'+(OFF.length?OFF.map(function(o){return'<p><b>'+esc(o.title)+'</b> '+q("from")+' '+esc(o.company||o.from)+'<br>'+esc(o.msg)+'<br><small>'+esc(o.contact)+'</small></p>'}).join(""):'<p class="hint">'+q("noO")+'</p>')+'</section>'}
+function sel(id,lab,opts){return'<div><label>'+q(lab)+'</label><select id="'+id+'"><option value="">'+q("any")+'</option>'+opts.map(function(o){return'<option value="'+o[0]+'">'+esc(o[1])+'</option>'}).join("")+'</select></div>'}
+function recUI(){
+$("rec").innerHTML='<section><h2>'+q("find")+'</h2><div class="two"><div><label>'+q("kw")+'</label><input id="rk" placeholder="'+esc(q("kwp"))+'"></div><div><label>'+q("my")+'</label><input id="ry" type="number" min="0"></div>'
++sel("re","edu",[["n",q("ng")],["g",q("gr")]])+sel("rl","lv",LV.map(function(k){return[k,T["l_"+k][0]]}))+sel("rw","wk",WK.map(function(k){return[k,T["w_"+k][0]]}))+sel("ri","ind",IK.map(function(k){return[k,T["i_"+k][0]]}))
++'<div><label>'+T.city[0]+'</label><input id="rcity"></div></div><button type="button" class="btn" data-go="1" style="margin-top:14px">'+q("go")+'</button></section><div id="rres"></div>'}
+async function runSearch(){
+if(!DB)return;
+try{var s=await DB.collection("profiles").get(),k=$("rk").value.toLowerCase().split(/[\s,]+/).filter(Boolean),my=+$("ry").value||0,ed=$("re").value,lv=$("rl").value,wk=$("rw").value,ind=$("ri").value,c=$("rcity").value.trim().toLowerCase(),out=[];
+s.docs.forEach(function(d){var x=d.data(),p=Object.assign(blank(),x.p);
+var yrs=p.exp.reduce(function(a,e){var m=String(e.yrs).match(/\d+(\.\d+)?/);return a+(m?+m[0]:0)},0);
+if(my&&yrs<my)return;
+var g=["grad","pg"].indexOf(p.edu)>-1;
+if(ed=="g"&&!g)return;if(ed=="n"&&g)return;
+if(lv&&p.level!=lv)return;
+if(wk&&p.work.indexOf(wk)<0&&p.work.indexOf("any")<0)return;
+if(ind&&p.ind.indexOf(ind)<0)return;
+if(c&&p.city.toLowerCase().indexOf(c)<0)return;
+var txt=[p.skills.join(" "),p.exp.map(function(e){return e.role+" "+e.org+" "+e.desc}).join(" "),p.know,p.degrees.map(function(e){return e.deg+" "+e.courses}).join(" "),p.indCustom,p.eduNote,p.work.map(function(w){return T["w_"+w][0]}).join(" ")].join(" ").toLowerCase();
+var sc=k.filter(function(w){return txt.indexOf(w)>-1}).length;
+if(k.length&&!sc)return;
+out.push({x:x,p:p,sc:sc,yrs:yrs})});
+out.sort(function(a,b){return b.sc-a.sc||b.yrs-a.yrs});RES=out;showRes()}catch(e){err(e)}}
+function pill(s){return'<span class="chip">'+esc(s)+'</span>'}
+function showRes(){
+$("rres").innerHTML='<p><b>'+RES.length+'</b> '+q("n")+'</p>'+(RES.length?RES.map(function(r,i){var p=r.p;
+return'<section><h2>'+esc(p.name||r.x.u)+'</h2><p class="hint">'+(p.level?esc(T["l_"+p.level][0]):'')+(p.city?' | '+esc(p.city):'')+(r.yrs?' | '+r.yrs+' yrs':'')+'</p>'
++(p.edu?'<p>'+esc(T["e_"+p.edu][0])+(p.degrees[0]&&p.degrees[0].deg?': '+esc(p.degrees.map(function(g){return g.deg+(g.uni?', '+g.uni:'')+(g.grade?' ('+g.grade+')':'')}).join('; ')):'')+'</p>':'')
++'<div class="chips">'+p.work.map(function(w){return pill(T["w_"+w][0])}).concat(p.ind.map(function(w){return pill(T["i_"+w][0])}),p.skills.map(pill)).join('')+'</div>'
++(p.exp.length?'<p>'+p.exp.map(function(e){return'<b>'+esc(e.role)+'</b> '+esc(e.org)+' '+esc(e.yrs)}).join('<br>')+'</p>':'')
++(p.know?'<p>'+esc(p.know.slice(0,240))+'</p>':'')
++'<p>'+esc([p.phone,p.wa,p.email].filter(Boolean).join(' | '))+(p.pay?'<br>'+esc(p.pay):'')+'</p>'
++'<details><summary>'+q("so")+'</summary><label>'+q("ot")+'</label><input id="ot'+i+'"><label>'+q("om")+'</label><textarea id="om'+i+'" style="min-height:70px"></textarea><button type="button" class="btn" data-send="'+i+'" style="margin-top:10px">'+q("so")+'</button></details></section>'}).join(''):'<p class="hint">'+q("none")+'</p>')}
+async function sendOffer(i){
+var r=RES[i],ti=$("ot"+i).value.trim();if(!ti||!me)return;
+try{await DB.collection("offers").add({to:r.x.u,from:me.u,company:me.company||"",contact:me.contact||"",title:ti,msg:$("om"+i).value.trim(),ts:Date.now()});toast(q("sent"));$("ot"+i).value="";$("om"+i).value=""}catch(e){err(e)}}
+document.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var d=b.dataset;
+if(d.mode){mode=d.mode;shell()}
+else if(d.auth)authGo(d.auth=="new");
+else if(d.out){if(unOff){unOff();unOff=null}OFF=[];if(AUTH)AUTH.signOut();setMe(null);S=blank();persist();ui()}
+else if(d.go)runSearch();
+else if(d.send)sendOffer(+d.send)});
+var _ui=ui;ui=function(){_ui();shell()};
+(function(){try{if(typeof firebase!="undefined"&&CFG.apiKey.indexOf("PASTE")<0){firebase.initializeApp(CFG);DB=firebase.firestore();AUTH=firebase.auth();
+AUTH.onAuthStateChanged(async function(us){if(busy)return;
+if(!us){setMe(null);shell();return}
+var u=us.email.split("@")[0];
+try{var r=await DB.doc("recruiters/"+u).get();
+if(r.exists){mode="rec";setMe({role:"r",u:u,company:r.data().company,contact:r.data().contact})}else{mode="seeker";setMe({role:"s",u:u});await loadMine(u)}}catch(e){err(e)}
+shell()})}}catch(e){err(e)}
+ui()})();
+ui();
+</script>
+</body>
+</html>
